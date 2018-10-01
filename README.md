@@ -1,1 +1,1 @@
-# ror_basics
+# Thinknetica. Курс 'Основы Rails'.
