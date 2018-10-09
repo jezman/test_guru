@@ -10,12 +10,18 @@
 
 categories = Category.create([{ title: :embedded }, { title: :backend }])
 
+users = User.create(
+  [{ email: 'first@supermail.com', username: :firstuser },
+   { email: 'second@supermail.com', username: :seconduser }]
+)
+
+
 tests = Test.create(
-  [{ title: 'C/C++', level: 3, category_id: categories[0].id },
+    [{ title: 'C/C++', level: 3, category_id: categories[0].id, author_id: users[0].id },
    { title: 'Golang', level: 2, category_id: categories[1].id },
    { title: 'Ruby', level: 1, category_id: categories[1].id },
-   { title: 'Python', level: 2, category_id: categories[1].id},
-   { title: 'STM32', level: 3, category_id: categories[0].id }]
+   { title: 'Python', level: 2, category_id: categories[1].id, author_id: users[1].id},
+   { title: 'STM32', level: 3, category_id: categories[0].id, author_id: users[0].id}]
 )
 
 questions = Question.create(
@@ -37,11 +43,6 @@ Answer.create(
    { body: 'Answer 2q4', question_id: questions[3].id, correct: true },
    { body: 'Answer 1q5', question_id: questions[4].id, correct: false },
    { body: 'Answer 2q5', question_id: questions[4].id, correct: true }]
-)
-
-users = User.create(
-  [{ email: 'first@supermail.com', username: :firstuser },
-   { email: 'second@supermail.com', username: :seconduser }]
 )
 
 TestPassing.create(
