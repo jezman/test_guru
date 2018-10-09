@@ -5,7 +5,10 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passings
   has_many :questions
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: {
+    scope: :level,
+    message: 'there can be only one test with this title and difficulty level'
+  }
   validates :level, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 0
