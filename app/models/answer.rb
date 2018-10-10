@@ -12,6 +12,6 @@ class Answer < ApplicationRecord
 
   def answers_count
     message = 'exceeded maximum number of answers to the question'
-    errors.add(:question, message) if question.answers.count > MAX_ANSWERS_COUNT
+    errors.add(:question, message) if question.answers.count >= MAX_ANSWERS_COUNT
   end
 end
