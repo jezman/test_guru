@@ -4,12 +4,16 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
+  def index
+    @questions = @test.questions
+  end
+
   def show
     render plain: @question.body
   end
 
   def create
-    if @test.questions.create(question_params).save
+    if @test.questions.new(question_params).save
       render plain: "Question '#{question_params[:body]}' created"
     else
       render plain: 'Creating error'
@@ -17,9 +21,9 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.delete
+    q = @question.destroy
 
-    render plain: "Question '#{question_params[:body]}' deleted"
+    render plain: "Question '#{q[:body]}' deleted"
   end
 
   private
