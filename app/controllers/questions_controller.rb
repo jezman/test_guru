@@ -13,7 +13,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if @test.questions.new(question_params).save
+    question = @test.questions.new(question_params)
+
+    if question.save
       render plain: "Question '#{question_params[:body]}' created"
     else
       render plain: 'Creating error'
@@ -21,9 +23,9 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    q = @question.destroy
+    question = @question.destroy
 
-    render plain: "Question '#{q[:body]}' deleted"
+    render plain: "Question '#{question[:body]}' deleted"
   end
 
   private
