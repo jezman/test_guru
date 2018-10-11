@@ -4,24 +4,22 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    render plain: @test.questions.inspect
-  end
-
   def show
     render plain: @question.body
   end
 
   def create
-    @test.questions.create(request_params)
-
-    render plain: "Question '#{request_params[:body]}' created"
+    if @test.questions.create(question_params).save
+      render plain: "Question '#{question_params[:body]}' created"
+    else
+      render plain: 'Creating error'
+    end
   end
 
   def destroy
     @question.delete
 
-    render plain: "Question '#{request_params[:body]}' deleted"
+    render plain: "Question '#{question_params[:body]}' deleted"
   end
 
   private
@@ -34,7 +32,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
-  def request_params
+  def question_params
     params.require(:question).permit(:body)
   end
 
