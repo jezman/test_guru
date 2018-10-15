@@ -46,7 +46,7 @@ class TestPassing < ApplicationRecord
   end
 
   def true_answers
-    current_question.answers.correct
+    @true_answers ||= current_question.answers.correct
   end
 
   def next_question
