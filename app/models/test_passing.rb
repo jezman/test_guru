@@ -1,4 +1,6 @@
 class TestPassing < ApplicationRecord
+  SUCCESS_PERSENT = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -12,6 +14,22 @@ class TestPassing < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  def current_question_number
+    test.questions.index(current_question) + 1
+  end
+
+  def questions_count
+    test.questions.count
+  end
+
+  def correct_answers_percent
+    (correct_answers.to_f / questions_count.to_f) * 100
+  end
+
+  def successfully_completed?
+    correct_answers_percent >= SUCCESS_PERSENT
   end
 
   private
@@ -32,6 +50,9 @@ class TestPassing < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.nil? ? 0 : current_question.id).first
+    test.questions
+        .order(:id).where('id > ?', current_question.nil? ? 0 : current_question.id).first
   end
+
+
 end
