@@ -3,12 +3,13 @@
   <%= @test.title %>
   <strong>Level:</strong>
   <%= @test.level %>
-
-<%= link_to 'New question', new_test_question_path(@test) %>
-<%= link_to 'Edit', edit_test_path(@test) %>
-<%= link_to 'Back', tests_path %>
 </p>
 
+<p>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+  <%= link_to 'Edit', edit_test_path(@test) %>
+  <%= link_to 'Back', tests_path %>
+</p>
 
 <table>
   <caption>Questions</caption>
