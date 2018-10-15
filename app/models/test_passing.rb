@@ -41,8 +41,8 @@ class TestPassing < ApplicationRecord
   def correct_answer?(answer_ids)
     correct_answers_count = true_answers.count
 
-    (correct_answers_count == true_answers.where(id: answer_ids).count) &&
-      correct_answers_count == answer_ids.count
+    (correct_answers_count == answer_ids.count) &&
+      correct_answers_count == true_answers.where(id: answer_ids).count
   end
 
   def true_answers
@@ -51,8 +51,7 @@ class TestPassing < ApplicationRecord
 
   def next_question
     test.questions
-        .order(:id).where('id > ?', current_question.nil? ? 0 : current_question.id).first
+        .order(:id)
+        .where('id > ?', current_question.nil? ? 0 : current_question.id).first
   end
-
-
 end
