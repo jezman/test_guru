@@ -20,12 +20,8 @@ class TestPassing < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
-  def questions_count
-    test.questions.count
-  end
-
   def correct_answers_percent
-    (correct_answers.to_f / questions_count.to_f) * 100
+    (correct_answers.to_f / test.questions.count.to_f) * 100
   end
 
   def successfully_completed?

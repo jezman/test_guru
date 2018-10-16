@@ -1,6 +1,6 @@
 <h1>Passing the <%= @test_passing.test.title %> test</h1>
 
-<h3>Question <%= @test_passing.current_question_number %> of <%= @test_passing.questions_count %></h3>
+<h3>Question <%= @test_passing.current_question_number %> of <%= @test_passing.test.questions.count %></h3>
 
 <%= form_with url: test_passing_path(@test_passing), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passing.current_question.answers, :id, :body, include_hidden: false do |b| %>
