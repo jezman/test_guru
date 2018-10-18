@@ -10,6 +10,11 @@ en:
       start: "Start"
 
   admin:
+    created: "%{resource} created"
+    updated: "%{resource} updated"
+    deleted: "%{resource} deleted"
+    restriction: "You are not authorized to view this page"
+
     header:
       header: "Admin panel TestGuru"
       hello: "Hello"
@@ -36,8 +41,6 @@ en:
       new:
         header: "New Test"
         back: "Back"
-      create:
-        success: "Test successfully created"
       edit:
         header: "Edit %{title} test"
         back: "Back"

@@ -10,6 +10,11 @@ ru:
       start: "Пройти"
 
   admin:
+    created: "%{resource} создан"
+    updated: "%{resource} обновлен"
+    deleted: "%{resource} удален"
+    restriction: "Вы не авторизованы для просмотра этой страницы"
+
     header:
       header: "Панель администратора TestGuru"
       hello: "Приветствую"
@@ -36,8 +41,6 @@ ru:
       new:
         header: "Добавление теста"
         back: "Назад"
-      create:
-        success: "Тест успешно создан"
       edit:
         header: "Редактировать %{title} тест"
         back: "Назад"
