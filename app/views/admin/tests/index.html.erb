@@ -1,11 +1,14 @@
 <h1>Tests list</h1>
+<p>
+  <%= link_to 'New test', new_admin_test_path %>
+</p>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Questions</th>
     <th>Levels</th>
-    <th >Actions</th>
+    <th colspan="4">Actions</th>
   </tr>
 
   <%= render @tests %>
