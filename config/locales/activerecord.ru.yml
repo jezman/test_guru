@@ -5,6 +5,7 @@ ru:
       category: "Категория"
       question: "Вопрос"
       answer: "Ответ"
+      user: "Пользователь"
 
     attributes:
       test:
@@ -16,6 +17,11 @@ ru:
       answer:
         body: "Содержание"
         correct: "Правильный"
+      user:
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        first_name: "Имя"
+        last_name: "Фамилия"
 
     errors:
       messages:
