@@ -36,6 +36,7 @@ gem 'rails-i18n', '~> 5.1'
 # UI
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
