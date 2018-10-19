@@ -1,33 +1,156 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  tests:
+    index:
+      header: "Available tests"
+      title: "Title"
+      questions: "Questions"
+      level:  "Level"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  admin:
+    created: "%{resource} created"
+    updated: "%{resource} updated"
+    deleted: "%{resource} deleted"
+    restriction: "You are not authorized to view this page"
+
+    header:
+      header: "Admin panel TestGuru"
+      hello: "Hello"
+      guru: "Guru"
+      logout: "Logout"
+
+    tests:
+      index:
+        header: "Avalilable Tests"
+        title: "Title"
+        questions: "Questions"
+        level: "Level"
+        actions: "Actions"
+        new_test: "New test"
+      show:
+        title: "Title"
+        questions: "Questions"
+        level: "Level"
+        actions: "Actions"
+        new_question: "New question"
+        edit: "Edit"
+        back: "Back"
+        body: "Body"
+      new:
+        header: "New Test"
+        back: "Back"
+      edit:
+        header: "Edit %{title} test"
+        back: "Back"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirmation: "Are you sure?"
+        start: "Start"
+
+    questions:
+      show:
+        header: "%{test_title} question"
+        answers: "Answers"
+        new_answer: "New answer"
+        edit: "Edit"
+        back: "Back"
+      new:
+        header: "New %{test_title} question"
+        back: "Back"
+      edit:
+        header: "Edit %{test_title} question"
+        back: "Back"
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirmation: "Are you sure?"
+
+    answers:
+      show:
+        question: "Question"
+        answer: "Answer"
+        correct: "Correct"
+        edit: "Edit"
+        back: "Back"
+      new:
+        header: "New answer"
+        back: "Back"
+      edit:
+        header: "Edit answer"
+        back: "Back"
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirmation: "Are you sure?"
+
+  test_passings:
+    show:
+      header: "Passing %{test_title} test"
+      questions: "Question %{current_question} of %{questions_count}"
+      next: "Next"
+    result:
+      header: "Test %{title}"
+      success: "successfully complete"
+      failed: "failed"
+      back: "Tests list"
+
+  helpers:
+    submit:
+      test:
+        create: "Add test"
+        update: "Update test"
+      question:
+        create: "Add question"
+        update: "Update question"
+      answer:
+        create: "Add answer"
+        update: "Update answer"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Body"
+      answer:
+        body: "Body"
+        correct: "Correct"
+    select:
+      prompt: "Select"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    header:
+      hello: "Hello"
+      guru: "Guru"
+      signup: "Sign Up"
+      login: "Login"
+      logout: "Logout"
+
+  layouts:
+    admin:
+      header: "Admin Panel | TestGuru"
+
+  test_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  users:
+    sessions:
+      create:
+        welcome: "Hello, %{user_name}"
+
+  difficulty_level:
+    easy: "easy"
+    medium: "medium"
+    hard: "hard"
+    hero: "hero"

@@ -1,12 +1,12 @@
 <% @test.questions.each do |question| %>
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to 'Show', admin_question_path(question) %></td>
-  <td><%= link_to 'Edit', edit_admin_question_path(question) %></td>
-  <td><%= link_to 'Delete',
+  <td><%= link_to t('.show'), admin_question_path(question) %></td>
+  <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
+  <td><%= link_to t('.delete'),
                   admin_question_path(question),
                   method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
+                  data: { confirm: t('.delete_confirmation') } %>
   </td>
 <% end %>
 </tr>

@@ -1,6 +1,6 @@
 module TestPassingsHelper
   def show_result_message(test_passing)
-    test_passing.successfully_completed? ? 'completed successfully' : 'failed'
+    test_passing.successfully_completed? ? t('test_passings.result.success') : t('test_passings.result.failed')
   end
 
   def set_result_color(test_passing)

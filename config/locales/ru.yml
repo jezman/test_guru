@@ -1,0 +1,158 @@
+ru:
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level:  "Уровень"
+      questions: "Вопросов"
+      actions: "Действия"
+    test:
+      start: "Пройти"
+
+  admin:
+    created: "%{resource} создан"
+    updated: "%{resource} обновлен"
+    deleted: "%{resource} удален"
+    restriction: "Вы не авторизованы для просмотра этой страницы"
+
+    header:
+      header: "Панель администратора TestGuru"
+      hello: "Приветствую"
+      guru: "Гуру"
+      logout: "Выйти"
+
+    tests:
+      index:
+        header: "Доступные Тесты"
+        title: "Название"
+        questions: "Вопросов"
+        level: "Уровень"
+        actions: "Действия"
+        new_test: "Новый тест"
+      show:
+        title: "Название"
+        questions: "Вопросы"
+        level: "Уровень"
+        actions: "Действия"
+        new_question: "Новый вопрос"
+        edit: "Редактировать"
+        back: "Назад"
+        body: "Содержание"
+      new:
+        header: "Добавление теста"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{title} тест"
+        back: "Назад"
+      test:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
+        start: "Пройти"
+
+    questions:
+      show:
+        header: "%{test_title} вопрос"
+        answers: "Ответы"
+        new_answer: "Добавить ответ"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Создать %{test_title} вопрос"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{test_title} вопрос"
+        back: "Назад"
+      question:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
+
+    answers:
+      show:
+        question: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Добавить ответ"
+        back: "Назад"
+      edit:
+        header: "Редактировать ответ"
+        back: "Назад"
+      answer:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
+
+  test_passings:
+    show:
+      header: "Прохождение %{test_title} теста"
+      questions: "Вопрос %{current_question} из %{questions_count}"
+      next: "Следующий"
+    result:
+      header: "Тест %{title}"
+      success: "успешно завершен"
+      failed: "провален"
+      back: "Список тестов"
+
+  helpers:
+    submit:
+      test:
+        create: "Добавить тест"
+        update: "Обновить тест"
+      question:
+        create: "Добавить вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Добавить ответ"
+        update: "Обновить ответ"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Содержание"
+      answer:
+        body: "Содержание"
+        correct: "Правильный"
+    select:
+      prompt: "Выберите"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    header:
+      hello: "Приветствую"
+      guru: "Гуру"
+      signup: "Зарегистрироваться"
+      login: "Войти"
+      logout: "Выйти"
+
+  layouts:
+    admin:
+      header: "Панель администратора | TestGuru"
+
+  test_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  users:
+    sessions:
+      create:
+        welcome: "Приветствую, %{user_name}"
+
+  difficulty_level:
+    easy: "Простой"
+    medium: "Средний"
+    hard: "Сложный"
+    hero: "Герой"
