@@ -1,14 +1,26 @@
-<h1><%= t('.header', test_title: @test_passing.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <h1><%= t('.header', test_title: @test_passing.test.title) %></h1>
 
-<h3><%= t('.questions', current_question: @test_passing.current_question_number, questions_count: @test_passing.test.questions.count) %></h3>
+    <h3><%= t('.questions', current_question: @test_passing.current_question_number, questions_count: @test_passing.test.questions.count) %></h3>
 
-<%= form_with url: test_passing_path(@test_passing), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passing.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+    <div class="card">
+      <div class="card-header">
+        <%= @test_passing.current_question.body%>
+      </div>
 
-  <p><%= form.submit t('.next') %></p>
-<% end %>
+      <ul class="list-group list-group-flush">
+        <%= form_with url: test_passing_path(@test_passing), local: true, method: :put do |form| %>
+          <%= form.collection_check_boxes :answer_ids, @test_passing.current_question.answers, :id, :body, include_hidden: false do |b| %>
+          <li class="list-group-item">
+            <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+            <%= b.label %>
+          </li>
+         <% end %>
+
+        </ul>
+        <%= form.submit t('.next'), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

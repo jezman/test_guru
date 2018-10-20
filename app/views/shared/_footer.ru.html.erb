@@ -1,11 +1,9 @@
-<p>
-  <%= current_year %> Сергей Маслов
-</p>
-
-<p>
-  <%= github_url("jezman", "test_guru") %> это площадка для прохождения тестов, где пользователи могут создавать, редактировать и проходить тесты.
-</p>
-
-<p>
-  <%= link_to "Учебный проект в онлайн-школе Thinknetica", "https://thinknetica.com", target: :blank %>
-</p>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <span class="text-muted">
+      <%= current_year %>
+      Сергей Маслов<br>
+      <%= github_url("jezman", "test_guru") %>
+      это площадка для прохождения тестов, где пользователи могут создавать, редактировать и проходить тесты.<br>
+      <%= link_to "Учебный проект в онлайн-школе Thinknetica", "https://thinknetica.com", target: :blank %>
+  </span>
+</nav>

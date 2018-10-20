@@ -1,4 +1,9 @@
 module ApplicationHelper
+  FLASH_TYPES = {
+    alert: 'warning',
+    notice: 'info'
+  }.freeze
+
   def current_year
     Time.current.year
   end
@@ -9,7 +14,13 @@ module ApplicationHelper
 
   def flash_messages
     flash.map do |type, message|
-      content_tag :p, message, class: "flash #{type}"
+      content_tag :div, message, class: flash_type(type), role: 'alert'
     end.join("\n").html_safe
+  end
+
+  private
+
+  def flash_type(type)
+    "alert alert-#{FLASH_TYPES[type.to_sym]}"
   end
 end

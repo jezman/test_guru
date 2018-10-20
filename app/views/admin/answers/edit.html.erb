@@ -1,6 +1,6 @@
 <h1><%= t('.header') %></h1>
 
-<p><%= @answer.question.body %></p>
+<%= @answer.question.body %>
 
 <%= render 'form' %>
 <%= link_to t('.back'), admin_question_path(@answer.question) %>
