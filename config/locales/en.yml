@@ -89,6 +89,15 @@ en:
         delete: "Delete"
         delete_confirmation: "Are you sure?"
 
+    gists:
+      index:
+        header: "Users Gists"
+        question: "Question"
+        url: "Hash"
+        user: "User email"
+      gist:
+        url: "Gist url"
+
   test_passings:
     show:
       header: "Passing %{test_title} test"
@@ -99,6 +108,11 @@ en:
       success: "successfully complete"
       failed: "failed"
       back: "Tests list"
+    gist:
+      success: "Gist successfully saved. %{url}"
+      failed: "Error occurred while saving the gist"
+
+  gist_description: "%{test_title} questions from TestGuru"
 
   helpers:
     submit:

@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def flash_messages
     flash.map do |type, message|
-      content_tag :div, message, class: flash_type(type), role: 'alert'
+      content_tag :div, sanitize(message), class: flash_type(type), role: 'alert'
     end.join("\n").html_safe
   end
 
