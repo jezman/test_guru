@@ -1,0 +1,20 @@
+<div class="row justify-content-center mt-3">
+  <h1><%= t('.header') %></h1>
+</div>
+
+<div class="row justify-content-center">
+  <div class="align-item-center col col-md-6">
+
+    <table class="table">
+      <thead>
+        <th><%= t('.question') %></th>
+        <th><%= t('.hash') %></th>
+        <th><%= t('.user') %></th>
+      </thead>
+
+      <tbody>
+        <%= render @gists %>
+      </tbody>
+    </table>
+  </div>
+</div>
