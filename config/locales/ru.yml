@@ -89,6 +89,15 @@ ru:
         delete: "Удалить"
         delete_confirmation: "Вы уверены?"
 
+    gists:
+      index:
+        header: "Gists пользователей"
+        question: "Вопрос"
+        url: "Hash"
+        user: "Пользователь"
+      gist:
+        url: "Ссылка"
+
   test_passings:
     show:
       header: "Прохождение %{test_title} теста"
@@ -98,7 +107,12 @@ ru:
       header: "Тест %{title}"
       success: "успешно завершен"
       failed: "провален"
+    gist:
       back: "Список тестов"
+      success: "Gist успешно сохранен. %{url}"
+      failed: "При сохранении gist произошла ошибка"
+
+  gist_description: "%{test_title} вопрос от TestGuru"
 
   helpers:
     submit:

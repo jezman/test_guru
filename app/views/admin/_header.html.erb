@@ -1,6 +1,15 @@
-<div class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <%= link_to t('.header'), root_path, class: 'navbar-brand' %>
-
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item nav-link active">
+        <%= link_to 'Gists', admin_gists_path, class: 'navbar-link' %>
+      </li>
+    </ul>
+  </div>
   <span class="navbar-text">
     <%= t('.hello') %>,
     <b class="nav-admin user-email"><%= current_user.email %></b>
@@ -9,3 +18,4 @@
     <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
   </span>
 </div>
+</nav>

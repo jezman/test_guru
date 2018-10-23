@@ -38,6 +38,12 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 
+# Env vars
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Toolkit for the GitHub API
+gem "octokit", "~> 4.0"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

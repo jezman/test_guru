@@ -19,6 +19,7 @@
          <% end %>
 
         </ul>
+        <%= link_to 'Gist question', gist_test_passing_path(@test_passing), method: :post %>
         <%= form.submit t('.next'), class: "btn btn-primary" %>
       <% end %>
     </div>
