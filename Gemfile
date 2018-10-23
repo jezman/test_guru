@@ -44,6 +44,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Toolkit for the GitHub API
 gem "octokit", "~> 4.0"
 
+# Icons
+gem 'octicons_helper'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
