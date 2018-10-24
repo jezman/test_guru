@@ -1,0 +1,10 @@
+<div class="progress">
+  <% questions_count = @test_passing.test.questions.count %>
+  <% current_question_number = @test_passing.current_question_number %>
+  <%= content_tag :div,
+                  '',
+                  class: 'progress-bar bg-success',
+                  role: 'progressbar',
+                  data: { questions_count: questions_count,
+                          current_question_number: current_question_number } %>
+</div>
