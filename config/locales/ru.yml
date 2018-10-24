@@ -50,6 +50,8 @@ ru:
         delete: "Удалить"
         delete_confirmation: "Вы уверены?"
         start: "Пройти"
+      form_inline:
+        submit: "OK"
 
     questions:
       show:
