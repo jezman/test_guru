@@ -1,8 +1,10 @@
 document.addEventListener('turbolinks:load', function() {
   var controls = document.querySelectorAll('.form-inline-link')
 
-  for (var i = 0; i < controls.length; i++) {
-    controls[i].addEventListener('click', formInlineLinkHandler)
+  if (controls) {
+    for (var i = 0; i < controls.length; i++) {
+      controls[i].addEventListener('click', formInlineLinkHandler)
+    }
   }
 
   var errors = document.querySelector('.resource-errors')
@@ -25,13 +27,15 @@ function formInlineHandler(testId) {
   var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
   var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
 
-  if (formInline.classList.contains('hide')) {
-    testTitle.classList.add('hide')
-    formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
-  } else {
-    testTitle.classList.remove('hide')
-    formInline.classList.add('hide')
-    link.textContent = 'Edit'
+  if (formInline) {
+    if (formInline.classList.contains('hide')) {
+      testTitle.classList.add('hide')
+      formInline.classList.remove('hide')
+      link.textContent = 'Cancel'
+    } else {
+      testTitle.classList.remove('hide')
+      formInline.classList.add('hide')
+      link.textContent = 'Edit'
+    }
   }
 }
