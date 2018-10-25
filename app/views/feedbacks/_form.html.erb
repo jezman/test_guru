@@ -1,0 +1,9 @@
+<%= bootstrap_form_with model: @feedback, local: true do |form| %>
+  <%= render 'shared/errors', resource: @feedback %>
+
+    <%= form.text_field :title, id: :feedback_title %>
+    <%= form.text_area :body, id: :feedback_body %>
+
+    <%= form.submit %>
+<% end %>
+
