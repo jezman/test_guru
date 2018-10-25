@@ -50,6 +50,8 @@ en:
         delete: "Delete"
         delete_confirmation: "Are you sure?"
         start: "Start"
+      form_inline:
+        submit: "OK"
 
     questions:
       show:

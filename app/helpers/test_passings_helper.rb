@@ -3,7 +3,7 @@ module TestPassingsHelper
     test_passing.successfully_completed? ? t('test_passings.result.success') : t('test_passings.result.failed')
   end
 
-  def set_result_color(test_passing)
-    test_passing.successfully_completed? ? 'success' : 'fail'
+  def result_color(test_passing)
+    test_passing.successfully_completed? ? 'text-success' : 'text-danger'
   end
 end
