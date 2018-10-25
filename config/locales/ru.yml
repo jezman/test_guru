@@ -116,6 +116,14 @@ ru:
 
   gist_description: "%{test_title} вопрос от TestGuru"
 
+  feedbacks:
+    new:
+      header: "Форма обратной связи"
+      back: "Назад"
+    create:
+      success: "Письмо успешно отправлено"
+      failed: "Ошибка при отправке письма"
+
   helpers:
     submit:
       test:
@@ -127,6 +135,8 @@ ru:
       answer:
         create: "Добавить ответ"
         update: "Обновить ответ"
+      feedback:
+        create: "Отправить"
     label:
       test:
         title: "Название"
@@ -137,6 +147,9 @@ ru:
       answer:
         body: "Содержание"
         correct: "Правильный"
+      feedback:
+        title: "Тема"
+        body: "Сообщение"
     select:
       prompt: "Выберите"
 
