@@ -8,7 +8,7 @@ function setProgress(progressBar) {
   var currentQuestionNumber = progressBar.dataset.currentQuestionNumber
   var questionsCount = progressBar.dataset.questionsCount
 
-  var completionPercent = (currentQuestionNumber / questionsCount) * 100
+  var completionPercent = ((currentQuestionNumber - 1) / questionsCount) * 100
 
   progressBar.style.width = completionPercent + "%"
 }
