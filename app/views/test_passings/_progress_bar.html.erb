@@ -1,6 +1,6 @@
 <div class="progress">
   <% questions_count = @test_passing.test.questions.count %>
-  <% current_question_number = @test_passing.current_question_number %>
+  <% current_question_number = @test_passing.current_question ? @test_passing.current_question_number : questions_count + 1 %>
   <%= content_tag :div,
                   '',
                   class: 'progress-bar bg-success',
