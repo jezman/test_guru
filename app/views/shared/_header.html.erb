@@ -18,8 +18,11 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('.hello')%>,
-      <b><%= current_user.email %></b>
-      Guru |
+      <b>
+        <%= current_user.first_name ? current_user.first_name : current_user.email %>
+      </b>
+
+      <%= t('.guru') %> |
       <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('.signup'), new_user_registration_path %>
