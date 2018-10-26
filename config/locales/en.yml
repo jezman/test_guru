@@ -20,6 +20,8 @@ en:
       hello: "Hello"
       guru: "Guru"
       logout: "Logout"
+      gists: "Gists"
+      badges: "Badges"
 
     tests:
       index:
@@ -126,7 +128,9 @@ en:
   
   badges:
     index:
-      header: "Ваши награды"
+      header: "Your badges"
+      available: "Available badges"
+      # TODO: add localization
 
   helpers:
     submit:

@@ -1,0 +1,22 @@
+<%= bootstrap_form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+    <%= form.text_field :title, id: :badge_title, class: "form-control" %>
+    <%# <%= form.text_field :image_path, id: :badge_image_path, class: "form-control" %>
+
+    <%= form.select :image_path,
+                    options_for_select(Badge.images),
+                    class: "form-control" %>
+
+    <%= form.select :assigment_rule,
+                    options_for_select(Badge::BADGES_TYPE),
+                    class: "form-control assigment_rule" %>
+    
+    <fieldset disabled="disabled" class="fieldset_level">
+      <%= form.number_field :level, id: :test_level, class: "form-conrtrol" %><br>
+    </fieldset>
+    <fieldset disabled="disabled" class="fieldset_category">
+      <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
+    </fieldset>
+    <%= form.submit class: "btn btn-primary" %>
+<% end %>
