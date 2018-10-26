@@ -20,6 +20,33 @@ ru:
       hello: "Приветствую"
       guru: "Гуру"
       logout: "Выйти"
+      gists: "Gists"
+      badges: "Награды"
+
+    badges:
+      index:
+        header: "Доступные награды"
+        title: "Название"
+        image_path: "Иконка"
+        assigment_rule: "Правило награждения"
+        actions: "Действия"
+        new_badge: "Новая награда"
+      show:
+        title: "Награда %{badge_title}"
+        assigment_rule: "Правило награждения"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Добавление награды"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{title}"
+        back: "Назад"
+      badge:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
 
     tests:
       index:
@@ -127,6 +154,7 @@ ru:
   badges:
     index:
       header: "Ваши награды"
+      available: "Все доступные награды"
 
   helpers:
     submit:
@@ -141,6 +169,9 @@ ru:
         update: "Обновить ответ"
       feedback:
         create: "Отправить"
+      badge:
+        create: "Добавить награду"
+        update: "Обновить нагруду"
     label:
       test:
         title: "Название"

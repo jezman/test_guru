@@ -6,7 +6,7 @@ ru:
       question: "Вопрос"
       answer: "Ответ"
       user: "Пользователь"
-      badge: "Награды"
+      badge: "Награда"
 
     attributes:
       test:
@@ -25,7 +25,10 @@ ru:
         last_name: "Фамилия"
       badge:
         title: "Название"
-        path: "Файл"
+        image_path: "Картинка"
+        assigment_rule: "Правило награждения"
+        level: "Уровень"
+        category: "Категория"
 
     errors:
       messages:

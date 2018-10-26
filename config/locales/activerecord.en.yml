@@ -25,7 +25,10 @@ en:
         last_name: "Last name"
       badges:
         title: "Title"
-        path: "File"
+        image_path: "Image"
+        assigment_rule: "Assigment rule"
+        level: "Level"
+        category: "Category"
 
     errors:
       messages:

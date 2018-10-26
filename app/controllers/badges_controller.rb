@@ -2,6 +2,7 @@ class BadgesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @badges = current_user.badges
+    @available_badges = Badge.all
+    @user_badges = current_user.badges
   end
 end
