@@ -1,20 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <%= link_to "TestGuru", root_path, class: 'navbar-brand' %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav">
-
-  <% if current_user && current_user.admin? %>
-      <li class="nav-item active">
-        <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-        <%= link_to t('admin.header.header'), admin_tests_path, class: 'navbar-link' %>
-      </li>
-  <% end %>
-
+      <% if current_user && current_user.admin? %>
+            <%= link_to t('admin.header.header'), admin_tests_path, class: 'nav-item nav-link' %>
+            <%= link_to t('.badges'), badges_path, class: 'nav-item nav-link' %>
+      <% end %>
     </ul>
   </div>
+
   <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('.hello')%>,
