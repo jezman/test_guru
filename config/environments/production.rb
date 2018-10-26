@@ -47,7 +47,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -64,6 +64,18 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "test_guru_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'testguru25102018.herokuapp.com' }
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'mail.smtp2go.com',
+    port: 2525, # 8025, 587 and 25 can also be used.
+    domain: 'testguru25102018.herokuapp.com',
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    user_name: ENV['SMTP2GO_USERNAME'],
+    password: ENV['SMTP2GO_PASSWORD']
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
