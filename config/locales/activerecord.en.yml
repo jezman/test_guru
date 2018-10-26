@@ -6,6 +6,7 @@ en:
       question: "Question"
       answer: "Answer"
       user: "User"
+      badge: "Badge" 
 
     attributes:
       test:
@@ -22,6 +23,9 @@ en:
         password_confirmation: "Password confirmation"
         first_name: "First name"
         last_name: "Last name"
+      badges:
+        title: "Title"
+        path: "File"
 
     errors:
       messages:

@@ -123,6 +123,10 @@ en:
     create:
       success: "Email successfully sent"
       failed: "Error sending email"
+  
+  badges:
+    index:
+      header: "Ваши награды"
 
   helpers:
     submit:
@@ -159,6 +163,7 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     header:
+      badges: "Badges"
       hello: "Hello"
       guru: "Guru"
       signup: "Sign Up"

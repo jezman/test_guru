@@ -16,7 +16,7 @@ ru:
     restriction: "Вы не авторизованы для просмотра этой страницы"
 
     header:
-      header: "Панель администратора TestGuru"
+      header: "Панель администратора"
       hello: "Приветствую"
       guru: "Гуру"
       logout: "Выйти"
@@ -123,6 +123,10 @@ ru:
     create:
       success: "Письмо успешно отправлено"
       failed: "Ошибка при отправке письма"
+  
+  badges:
+    index:
+      header: "Ваши награды"
 
   helpers:
     submit:
@@ -161,6 +165,7 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
     header:
+      badges: "Награды"
       hello: "Приветствую"
       guru: "Гуру"
       signup: "Зарегистрироваться"
