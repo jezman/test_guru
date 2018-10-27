@@ -7,6 +7,11 @@ class TestPassing < ApplicationRecord
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
+  scope :successed_tests_by_user, ->(user) {
+    where(user: user, current_question: nil)
+      .select(&:successfully_completed?)
+  }
+
   def accept!(answer_ids)
     self.correct_answers += 1 if correct_answer?(answer_ids)
     save!

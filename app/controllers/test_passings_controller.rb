@@ -10,6 +10,7 @@ class TestPassingsController < ApplicationController
     @test_passing.accept!(params[:answer_ids])
 
     if @test_passing.completed?
+      BadgeService.new(@test_passing).check
       TestsMailer.completed_test(@test_passing).deliver_now
       redirect_to result_test_passing_path(@test_passing)
     else
