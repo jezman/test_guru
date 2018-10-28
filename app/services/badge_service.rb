@@ -19,11 +19,11 @@ class BadgeService
   def all_category_tests_passed?(category)
     already_awarded?(category_id: category.id)
     return false unless category.is_a?(Category) && @test.category.id == category.id
-    category.tests.count == @user.tests.by_category(category.title).uniq.count
+    category.tests.count == @user.tests.where(category_id: category.id).uniq.count
   end
 
   def test_first_try_passed?(_value)
-    TestPassing.where(user: @user, test: @test).count == 1 if @test_passing.successfully_completed?
+    TestPassing.where(user: @user, test: @test).count == 1
   end
 
   def all_level_tests_passed?(level)
