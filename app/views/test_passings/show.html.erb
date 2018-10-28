@@ -1,5 +1,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
+    <%= render 'timer' %>
+
     <h1><%= t('.header', test_title: @test_passing.test.title) %></h1>
 
     <%= render 'progress_bar' %>

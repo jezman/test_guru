@@ -5,8 +5,10 @@ en:
       title: "Title"
       questions: "Questions"
       level:  "Level"
+      time_limit: "Time limit"
       actions: "Actions"
     test:
+      time_limit: "%{time} min"
       start: "Start"
 
   admin:
@@ -29,6 +31,7 @@ en:
         title: "Title"
         questions: "Questions"
         level: "Level"
+        time_limit: "Time limit"
         actions: "Actions"
         new_test: "New test"
       show:
@@ -47,6 +50,7 @@ en:
         header: "Edit %{title} test"
         back: "Back"
       test:
+        time_limit: "%{time} min"
         show: "Show"
         edit: "Edit"
         delete: "Delete"

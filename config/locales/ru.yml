@@ -5,8 +5,10 @@ ru:
       title: "Название"
       level:  "Уровень"
       questions: "Вопросов"
+      time_limit: "Отведенное время"
       actions: "Действия"
     test:
+      time_limit: "%{time} мин"
       start: "Пройти"
 
   admin:
@@ -54,6 +56,7 @@ ru:
         title: "Название"
         questions: "Вопросов"
         level: "Уровень"
+        time_limit: "Отведенное время"
         actions: "Действия"
         new_test: "Новый тест"
       show:
@@ -72,6 +75,7 @@ ru:
         header: "Редактировать %{title} тест"
         back: "Назад"
       test:
+        time_limit: "%{time} мин"
         show: "Посмотреть"
         edit: "Редактировать"
         delete: "Удалить"

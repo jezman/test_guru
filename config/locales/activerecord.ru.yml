@@ -12,6 +12,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+        time_limit: "Время на прохождение"
         category_id: "Категория"
       question:
         body: "Содержание"
