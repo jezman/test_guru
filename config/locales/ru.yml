@@ -16,10 +16,37 @@ ru:
     restriction: "Вы не авторизованы для просмотра этой страницы"
 
     header:
-      header: "Панель администратора TestGuru"
+      header: "Панель администратора"
       hello: "Приветствую"
       guru: "Гуру"
       logout: "Выйти"
+      gists: "Gists"
+      badges: "Награды"
+
+    badges:
+      index:
+        header: "Доступные награды"
+        title: "Название"
+        image_path: "Иконка"
+        assigment_rule: "Правило награждения"
+        actions: "Действия"
+        new_badge: "Новая награда"
+      show:
+        title: "Награда %{badge_title}"
+        assigment_rule: "Правило награждения"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Добавление награды"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{title}"
+        back: "Назад"
+      badge:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
 
     tests:
       index:
@@ -123,6 +150,11 @@ ru:
     create:
       success: "Письмо успешно отправлено"
       failed: "Ошибка при отправке письма"
+  
+  badges:
+    index:
+      header: "Ваши награды"
+      available: "Все доступные награды"
 
   helpers:
     submit:
@@ -137,6 +169,9 @@ ru:
         update: "Обновить ответ"
       feedback:
         create: "Отправить"
+      badge:
+        create: "Добавить награду"
+        update: "Обновить нагруду"
     label:
       test:
         title: "Название"
@@ -161,6 +196,7 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
     header:
+      badges: "Награды"
       hello: "Приветствую"
       guru: "Гуру"
       signup: "Зарегистрироваться"

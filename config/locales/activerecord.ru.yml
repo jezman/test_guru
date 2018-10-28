@@ -6,6 +6,7 @@ ru:
       question: "Вопрос"
       answer: "Ответ"
       user: "Пользователь"
+      badge: "Награда"
 
     attributes:
       test:
@@ -22,6 +23,12 @@ ru:
         password_confirmation: "Подтверждение пароля"
         first_name: "Имя"
         last_name: "Фамилия"
+      badge:
+        title: "Название"
+        image_path: "Картинка"
+        assigment_rule: "Правило награждения"
+        level: "Уровень"
+        category: "Категория"
 
     errors:
       messages:

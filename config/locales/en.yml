@@ -20,6 +20,8 @@ en:
       hello: "Hello"
       guru: "Guru"
       logout: "Logout"
+      gists: "Gists"
+      badges: "Badges"
 
     tests:
       index:
@@ -123,6 +125,33 @@ en:
     create:
       success: "Email successfully sent"
       failed: "Error sending email"
+  
+  badges:
+    index:
+      header: "Your badges"
+      available: "Available badges"
+      header: "Available badges"
+      title: "Title"
+      image_path: "Image"
+      assigment_rule: "Assigment rule"
+      actions: "Actions"
+      new_badge: "New badge"
+    show:
+      title: "Badge %{badge_title}"
+      assigment_rule: "Rule"
+      edit: "Edit"
+      back: "Back"
+    new:
+      header: "New badge"
+      back: "Back"
+    edit:
+      header: "Edit %{title}"
+      back: "Back"
+    badge:
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      delete_confirmation: "Are you sure?"
 
   helpers:
     submit:
@@ -159,6 +188,7 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     header:
+      badges: "Badges"
       hello: "Hello"
       guru: "Guru"
       signup: "Sign Up"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_112334) do
+ActiveRecord::Schema.define(version: 2018_10_26_100601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2018_10_25_112334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "assigment_rule", null: false
+    t.text "image_path"
+    t.integer "level"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_badges_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -107,5 +118,16 @@ ActiveRecord::Schema.define(version: 2018_10_25_112334) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  create_table "users_badges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "badge_id"], name: "index_users_badges_on_user_id_and_badge_id"
+  end
+
+  add_foreign_key "badges", "categories"
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "users_badges", "badges"
+  add_foreign_key "users_badges", "users"
 end
