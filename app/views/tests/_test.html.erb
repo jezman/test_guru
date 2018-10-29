@@ -2,6 +2,6 @@
   <td><%= test.title %></td>
   <td><%= test.questions.count %></td>
   <td><%= test_level(test) %></td>
-  <td><%= t('.time_limit', time: test.time_limit)%></td>
+  <td><%= test.time_limit ? t('.time_limit', time: test.time_limit) : t('.unlimited') %></td>
   <td><%= button_to t('.start'), start_test_path(test), class: "btn btn-primary" %></td>
 </tr>

@@ -1,6 +1,6 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
-    <%= render 'timer' %>
+    <%= render 'timer' if @test_passing.test.time_limit.present?%>
 
     <h1><%= t('.header', test_title: @test_passing.test.title) %></h1>
 
