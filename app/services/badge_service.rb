@@ -18,7 +18,7 @@ class BadgeService
 
   def all_category_tests_passed?(category)
     already_awarded?(category_id: category.id)
-    return false unless category.is_a?(Category) && @test.category.id == category.id
+    return unless category.is_a?(Category) && @test.category.id == category.id
     category.tests.count == @user.tests.where(category_id: category.id).uniq.count
   end
 
@@ -28,7 +28,7 @@ class BadgeService
 
   def all_level_tests_passed?(level)
     already_awarded?(level: level)
-    return false unless level.is_a?(Integer)
+    return unless level.is_a?(Integer)
     Test.by_level(level).count == @user.tests_by_level(level).uniq.count
   end
 
