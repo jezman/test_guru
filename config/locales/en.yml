@@ -9,6 +9,7 @@ en:
       actions: "Actions"
     test:
       time_limit: "%{time} min"
+      unlimited: "Unlimited"
       start: "Start"
 
   admin:
@@ -51,6 +52,7 @@ en:
         back: "Back"
       test:
         time_limit: "%{time} min"
+        unlimited: "Unlimited"
         show: "Show"
         edit: "Edit"
         delete: "Delete"

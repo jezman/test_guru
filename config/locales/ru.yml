@@ -9,6 +9,7 @@ ru:
       actions: "Действия"
     test:
       time_limit: "%{time} мин"
+      unlimited: "Неограниченно"
       start: "Пройти"
 
   admin:
@@ -76,6 +77,7 @@ ru:
         back: "Назад"
       test:
         time_limit: "%{time} мин"
+        unlimited: "Неограниченно"
         show: "Посмотреть"
         edit: "Редактировать"
         delete: "Удалить"
