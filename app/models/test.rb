@@ -14,10 +14,10 @@ class Test < ApplicationRecord
     greater_than_or_equal_to: 0
   }
 
-  validates :time_limit, numericality: {
-    only_integer: true,
-    greater_than_or_equal_to: 1
-  }
+  # validates :time_limit, numericality: {
+  #   only_integer: true,
+  #   greater_than_or_equal_to: 1
+  # }
 
   scope :by_level, ->(level) { where(level: level) }
   scope :easy, -> { by_level(0..1) }
