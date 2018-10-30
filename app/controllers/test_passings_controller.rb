@@ -55,7 +55,7 @@ class TestPassingsController < ApplicationController
 
   def check_passing_time
     return unless @test_passing.time_out?
-    # TestsMailer.completed_test(@test_passing).deliver_now
+    TestsMailer.completed_test(@test_passing).deliver_now
     redirect_to result_test_passing_path(@test_passing)
   end
 end

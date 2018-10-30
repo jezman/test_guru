@@ -1,45 +1,42 @@
 class BadgeService
+  attr_reader :badges
+
   def initialize(test_passing)
     @test_passing = test_passing
     @test = test_passing.test
     @user = test_passing.user
+    @badges = []
   end
 
-  def check
+  def awarded_badges!
     Badge.all.each do |badge|
-      case badge.assigment_rule
-      when 'all_category_tests' then award(badge, all_category_tests?(badge.category))
-      when 'test_first_try' then award(badge, test_first_try?)
-      when 'all_level_tests' then award(badge, all_level_tests?(badge.level))
-      end
+      award(badge) if send("#{badge.assigment_rule}_passed?", badge.level || badge.category)
     end
   end
 
   private
 
-  def all_category_tests?(category)
-    return false unless @test.category.title == category.title
-    category.tests.count == count_category_tests(category)
+  def all_category_tests_passed?(category)
+    already_awarded?(category_id: category.id)
+    return unless category.is_a?(Category) && @test.category.id == category.id
+    category.tests.count == @user.tests.where(category_id: category.id).uniq.count
   end
 
-  def test_first_try?
-    (@test_passing.successfully_completed? &&
-    TestPassing.where(user: @user, test: @test).count == 1)
+  def test_first_try_passed?(_value)
+    TestPassing.where(user: @user, test: @test).count == 1
   end
 
-  def all_level_tests?(level)
-    Test.by_level(level).count == successed_user_tests.map(&:test).map(&:level).count(level)
+  def all_level_tests_passed?(level)
+    already_awarded?(level: level)
+    return unless level.is_a?(Integer)
+    Test.by_level(level).count == @user.tests_by_level(level).uniq.count
   end
 
-  def successed_user_tests
-    TestPassing.successed_tests_by_user(@user)
+  def award(badge)
+    @badges.push(badge)
   end
 
-  def count_category_tests(category)
-    successed_user_tests.map(&:test).map(&:category).map(&:title).count(category.title)
-  end
-
-  def award(badge, rule)
-    @user.badges << badge if rule
+  def already_awarded?(options)
+    @user.badges.find_by(options).nil? ? true : false
   end
 end
