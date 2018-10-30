@@ -11,7 +11,8 @@ class TestPassingsController < ApplicationController
     @test_passing.accept!(params[:answer_ids])
 
     if @test_passing.completed?
-      BadgeService.new(@test_passing).check
+      awarded_badges! if @test_passing.successfully_completed?
+
       TestsMailer.completed_test(@test_passing).deliver_now
       redirect_to result_test_passing_path(@test_passing)
     else
@@ -46,11 +47,15 @@ class TestPassingsController < ApplicationController
     current_user.gists.create(question: @test_passing.current_question, url: gist_url)
   end
 
+  def awarded_badges!
+    badge_service = BadgeService.new(@test_passing)
+    badge_service.awarded_badges!
+    current_user.badges.push(badge_service.badges)
+  end
+
   def check_passing_time
     return unless @test_passing.time_out?
     # TestsMailer.completed_test(@test_passing).deliver_now
     redirect_to result_test_passing_path(@test_passing)
   end
-
-  
 end
