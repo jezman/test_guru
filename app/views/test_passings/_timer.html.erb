@@ -1,6 +1,5 @@
 <%= content_tag :span,
                 '',
                 class: 'test-timer text-danger',
-                data: { starting_time: @test_passing.created_at.to_i,
-                        time_limit: @test_passing.test.time_limit }
+                data: { time_limit:  show_timer(@test_passing) }
 %>

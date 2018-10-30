@@ -142,6 +142,7 @@ ru:
       header: "Тест %{title}"
       success: "успешно завершен"
       failed: "провален"
+      time_failed: "провален, время вышло"
     gist:
       back: "Список тестов"
       success: "Gist успешно сохранен. %{url}"

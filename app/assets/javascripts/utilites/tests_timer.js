@@ -5,17 +5,20 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function countDown(timer) {
-  var limitInSeconds = timer.dataset.timeLimit * 60
+  var limitInSeconds = timer.dataset.timeLimit
   showRemainigTime(limitInSeconds, timer)
 
   setInterval(function() {
     limitInSeconds--
     showRemainigTime(limitInSeconds, timer)
     
-    if (limitInSeconds == 0) window.location.replace(window.location + '/result')
+    if (limitInSeconds == 0) {
+      alert("Время вышло")
+      window.location.replace(window.location + '/result')
+    }
   }, 1000)
 }
 
 function showRemainigTime(seconds, timer) {
-  timer.innerHTML = parseInt(seconds / 60) + ":" + (seconds % 60)
+  timer.innerHTML = parseInt(seconds / 60) + ":" + (seconds % 60) + " до окончания теста"
 }

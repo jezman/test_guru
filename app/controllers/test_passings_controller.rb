@@ -1,6 +1,7 @@
 class TestPassingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passing
+  before_action :check_passing_time, only: :update
 
   def show; end
 
@@ -44,4 +45,12 @@ class TestPassingsController < ApplicationController
   def create_gist!(gist_url)
     current_user.gists.create(question: @test_passing.current_question, url: gist_url)
   end
+
+  def check_passing_time
+    return unless @test_passing.time_out?
+    # TestsMailer.completed_test(@test_passing).deliver_now
+    redirect_to result_test_passing_path(@test_passing)
+  end
+
+  
 end
