@@ -1,5 +1,5 @@
 <%= content_tag :span,
                 '',
                 class: 'test-timer text-danger',
-                data: { time_limit:  show_timer(@test_passing) }
+                data: { time_limit:  @test_passing.remaining_seconds }
 %>

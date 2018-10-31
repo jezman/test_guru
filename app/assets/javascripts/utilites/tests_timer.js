@@ -8,11 +8,12 @@ function countDown(timer) {
   var limitInSeconds = timer.dataset.timeLimit
   showRemainigTime(limitInSeconds, timer)
 
-  setInterval(function() {
+  var timerId = setInterval(function() {
     limitInSeconds--
     showRemainigTime(limitInSeconds, timer)
     
     if (limitInSeconds == 0) {
+      clearInterval(timerId)
       alert("Время вышло")
       window.location.replace(window.location + '/result')
     }
