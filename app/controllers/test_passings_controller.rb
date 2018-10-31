@@ -1,6 +1,7 @@
 class TestPassingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passing
+  before_action :check_passing_time, only: :update
 
   def show; end
 
@@ -50,5 +51,10 @@ class TestPassingsController < ApplicationController
     badge_service = BadgeService.new(@test_passing)
     badge_service.awarded_badges!
     current_user.badges.push(badge_service.badges)
+  end
+
+  def check_passing_time
+    return unless @test_passing.time_out?
+    redirect_to result_test_passing_path(@test_passing)
   end
 end

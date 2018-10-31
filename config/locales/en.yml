@@ -5,8 +5,11 @@ en:
       title: "Title"
       questions: "Questions"
       level:  "Level"
+      time_limit: "Time limit"
       actions: "Actions"
     test:
+      time_limit: "%{time} min"
+      unlimited: "Unlimited"
       start: "Start"
 
   admin:
@@ -29,6 +32,7 @@ en:
         title: "Title"
         questions: "Questions"
         level: "Level"
+        time_limit: "Time limit"
         actions: "Actions"
         new_test: "New test"
       show:
@@ -47,6 +51,8 @@ en:
         header: "Edit %{title} test"
         back: "Back"
       test:
+        time_limit: "%{time} min"
+        unlimited: "Unlimited"
         show: "Show"
         edit: "Edit"
         delete: "Delete"
@@ -111,6 +117,7 @@ en:
       header: "Test %{title}"
       success: "successfully complete"
       failed: "failed"
+      time_failed: "Time's out"
       back: "Tests list"
     gist:
       success: "Gist successfully saved. %{url}"

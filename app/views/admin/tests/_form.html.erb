@@ -3,6 +3,7 @@
 
     <%= form.text_field :title, id: :test_title, class: "form-control" %>
     <%= form.number_field :level, id: :test_level, class: "form-conrtrol" %><br>
+    <%= form.number_field :time_limit, id: :test_timer, class: "form-conrtrol" %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
 
     <%= form.submit class: "btn btn-primary" %>

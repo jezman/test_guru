@@ -28,6 +28,18 @@ class TestPassing < ApplicationRecord
     correct_answers_percent >= SUCCESS_PERSENT
   end
 
+  def time_limit_test?
+    test.time_limit.present?
+  end
+
+  def remaining_seconds
+    ((created_at + test.time_limit.minutes) - Time.current).to_i
+  end
+
+  def time_out?
+    remaining_seconds <= 0 if time_limit_test?
+  end
+
   private
 
   def before_validation_set_current_question

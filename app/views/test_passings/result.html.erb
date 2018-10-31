@@ -2,6 +2,7 @@
   <div class="col col-md-6">
     <%= render 'progress_bar' %>
     <h1 class="<%= result_color(@test_passing) %>">
+      <%= t('test_passings.result.time_failed') if @test_passing.time_out? %> 
       <%= t('.header', title: @test_passing.test.title) %>
       <%= show_result_message(@test_passing)%></h1><br>
     <h2><%= link_to t('.back'), tests_path %></h2>

@@ -5,8 +5,11 @@ ru:
       title: "Название"
       level:  "Уровень"
       questions: "Вопросов"
+      time_limit: "Отведенное время"
       actions: "Действия"
     test:
+      time_limit: "%{time} мин"
+      unlimited: "Неограниченно"
       start: "Пройти"
 
   admin:
@@ -54,6 +57,7 @@ ru:
         title: "Название"
         questions: "Вопросов"
         level: "Уровень"
+        time_limit: "Отведенное время"
         actions: "Действия"
         new_test: "Новый тест"
       show:
@@ -72,6 +76,8 @@ ru:
         header: "Редактировать %{title} тест"
         back: "Назад"
       test:
+        time_limit: "%{time} мин"
+        unlimited: "Неограниченно"
         show: "Посмотреть"
         edit: "Редактировать"
         delete: "Удалить"
@@ -136,6 +142,7 @@ ru:
       header: "Тест %{title}"
       success: "успешно завершен"
       failed: "провален"
+      time_failed: "время вышло"
     gist:
       back: "Список тестов"
       success: "Gist успешно сохранен. %{url}"

@@ -12,6 +12,7 @@ en:
       test:
         title: "Title"
         level: "Level"
+        time_limit: "Time limit"
         category_id: "Category"
       question:
         body: "Body"
